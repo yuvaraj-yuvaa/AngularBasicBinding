@@ -1,0 +1,35 @@
+
+<div>Event Binding</div>
+<input type="text"
+class="form-control"
+(input)="updateServerName($event)"><br>
+
+<div>Two way binding</div>
+<input type="text"
+class="form-control"
+[(ngModel)]="serverName" ><br>
+
+<button class="btn btn-primary"
+ [disabled]="!allowMyServer"
+ (click)="createServer()">Add Server</button>
+
+ <p>{{serverName}}</p>
+
+ <p *ngIf="serverCreated">Server wa created, server name is {{ serverName }} </p>
+<app-server></app-server>
+
+ <div>*ngIf</div>
+ <input type="text"
+ class="form-control"
+ [(ngModel)]="testName"><br>
+ 
+ <p *ngIf="testCreted">test name created, test name is {{ testName }} </p>
+ 
+ <button class="btn btn-success" (click)="myTestFunc()">Test Name</button>
+
+ <button class="btn btn-success" (click)="funBtn('enableBtn')" [disabled]="enableBtn">enable</button>
+ <button class="btn btn-success" (click)="funBtn('disableBtn')" [disabled]="disableBtn">Disable</button>
+
+
+
+
